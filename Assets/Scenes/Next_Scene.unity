@@ -229,6 +229,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMarker: {fileID: 1526147152}
   endMarker: {fileID: 1924217366}
+  Player: {fileID: 0}
+  PlayerMaintainer: {fileID: 0}
   speed: 1
   journeyLenght: 3
   loop: 1
@@ -397,7 +399,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670800690}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 94c11ad1e89744605a5a4f0aa4532e69, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -792,6 +794,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMarker: {fileID: 1122803098}
   endMarker: {fileID: 784808512}
+  Player: {fileID: 0}
+  PlayerMaintainer: {fileID: 0}
   speed: 1
   journeyLenght: 4
   loop: 1
@@ -1115,6 +1119,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMarker: {fileID: 1060367952}
   endMarker: {fileID: 1286622170}
+  Player: {fileID: 0}
+  PlayerMaintainer: {fileID: 0}
   speed: 1
   journeyLenght: 2
   loop: 1
