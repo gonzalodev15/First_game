@@ -10,11 +10,10 @@ public class RaycastShoot : MonoBehaviour
     public float hitForce = 100f;                                        // Amount of force which will be added to objects with a rigidbody shot by the player
     public Transform gunEnd;                                            // Holds a reference to the gun end object, marking the muzzle location of the gun
 
-    private Camera fpsCam;                                                // Holds a reference to the first person camera
     private WaitForSeconds shotDuration = new WaitForSeconds(0.07f);    // WaitForSeconds object used by our ShotEffect coroutine, determines time laser line will remain visible
     private LineRenderer laserLine;                                        // Reference to the LineRenderer component which will display our laserline
     private float nextFire;
-    RaycastHit hit;
+    private RaycastHit hit;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,13 +29,19 @@ public class RaycastShoot : MonoBehaviour
             nextFire = Time.time + fireRate;
             StartCoroutine(ShotEffect());
             Vector3 rayOrigin = transform.position;
-            if (Physics.Raycast(rayOrigin, transform.forward, out hit, weaponRange))
+
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, weaponRange))
             {
-                laserLine.SetPosition(1, hit.point);
-            } else
-            {
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * weaponRange, Color.green);
+                ShootableBox health = hit.collider.GetComponent<ShootableBox>();
+                if (health != null)
+                {
+                    health.Damage(gunDamage);
+                }
 
             }
+            laserLine.SetPosition(0, transform.position);
+            laserLine.SetPosition(1, transform.TransformDirection(Vector3.forward) * weaponRange);
         }
     }
 

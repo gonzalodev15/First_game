@@ -36,23 +36,4 @@ public class PlatformMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        
-        if(other.gameObject == Player)
-        {
-            //other.gameObject.transform.SetParent(PlayerMaintainer.transform, true);
-            Player.transform.SetParent(PlayerMaintainer.transform, true);
-
-            Player.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject == Player)
-        {
-            Player.transform.parent = null;
-        }
-    }
 }
