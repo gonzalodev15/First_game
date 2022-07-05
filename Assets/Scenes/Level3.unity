@@ -881,6 +881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 317e1773d087c4adc97ba4db7d6ae889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  retryLevelName: Level3
 --- !u!4 &1314967911
 Transform:
   m_ObjectHideFlags: 0
@@ -1430,9 +1431,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneFlow: {fileID: 1314967910}
-  _winSceneName: Next_Scene
+  _winSceneName: 
   _levelLoadDelay: 2
-  _loseSceneName: Next_Scene
+  _loseSceneName: GameOver
 --- !u!4 &1909251034
 Transform:
   m_ObjectHideFlags: 0

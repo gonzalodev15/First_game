@@ -14,6 +14,7 @@ public class LevelFlow : MonoBehaviour
     private void OnEnable()
     {
         Goal.GoalReached += LoadWinLevel;
+        PlayerMovement.PlayerDied += LoadLoseLevel;
     }
 
     private IEnumerator LoadLevel(string levelName)
@@ -35,5 +36,6 @@ public class LevelFlow : MonoBehaviour
     private void OnDisable()
     {
         Goal.GoalReached -= LoadWinLevel;
+        PlayerMovement.PlayerDied -= LoadLoseLevel;
     }
 }
