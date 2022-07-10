@@ -22,6 +22,7 @@ public class PhaseEnabling : MonoBehaviour
             Platform2.SetActive(true);
             Platform3.SetActive(true);
             Platform4.SetActive(true);
+            Platform4.transform.GetChild(0).gameObject.SetActive(true);
             Platform5.SetActive(true);
             Platform6.SetActive(true);
             Enemy1.SetActive(true);
